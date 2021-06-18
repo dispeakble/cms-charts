@@ -1,6 +1,5 @@
 apiVersion: v2
-metadata:
-  name: Clear CMS
+name: cms
 description: Clear CMS helm chart
 type: application
 version: 0.1.0
