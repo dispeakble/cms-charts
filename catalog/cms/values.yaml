@@ -6,7 +6,7 @@ fullnameOverride: ''
 global:
   version: "0.1.0"
   images:
-    hub: "dispeakble/crm-hub:1614980935"
+    hub: dispeakble/crm-hub:1614980935
   env: "local"
   redis:
     port: "6379"
