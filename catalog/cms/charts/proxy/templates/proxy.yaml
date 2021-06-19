@@ -43,7 +43,7 @@ spec:
               secretKeyRef:
                 key: redis-password
                 name: redis
-                    optional: false
+                optional: false
           image: {{ .Values.global.images.proxy }}
           imagePullPolicy: IfNotPresent
           name: cms-proxy
