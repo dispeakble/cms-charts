@@ -5,6 +5,7 @@ fullnameOverride: ''
 
 global:
   version: "0.1.0"
+  namespace: default
   images:
     hub: dispeakble/crm-hub:1614980935
   env: "local"

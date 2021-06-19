@@ -6,6 +6,7 @@ metadata:
     cattle.io/creator: norman
     workload.user.cattle.io/workloadselector: deployment-default-crm-hub
   name: crm-hub
+  namespace: {{ .Values.global.namespace }}
   selfLink: /apis/apps/v1/namespaces/default/deployments/crm-hub
 spec:
   progressDeadlineSeconds: 600
