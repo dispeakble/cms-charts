@@ -46,7 +46,7 @@ spec:
             allowPrivilegeEscalation: false
             capabilities: {}
             privileged: false
-            readOnlyRootFilebucket: false
+            readOnlyRootFilesystem: false
             runAsNonRoot: false
           stdin: true
           terminationMessagePath: /dev/termination-log
