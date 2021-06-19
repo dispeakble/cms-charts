@@ -26,31 +26,31 @@ spec:
         workload.user.cattle.io/workloadselector: deployment-default-crm-hub
     spec:
       containers:
-        name: crm-hub
         image: {{ .Values.global.images.hub }}
         - env:
-          - name: redis_port
-            value: "{{ .Values.global.redis.port }}"
-          - name: redis_server
-            value: "{{ .Values.global.redis.port }}"
-          - name: redis_password
-            valueFrom:
-              secretKeyRef:
-                key: redis-password
-                name: redis
-                optional: false
-        imagePullPolicy: IfNotPresent
-        resources: {}
-        securityContext:
-          allowPrivilegeEscalation: false
-          capabilities: {}
-          privileged: false
-          readOnlyRootFilesystem: false
-          runAsNonRoot: false
-        stdin: true
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-        tty: true
+            - name: redis_port
+              value: "{{ .Values.global.redis.port }}"
+            - name: redis_server
+              value: "{{ .Values.global.redis.port }}"
+            - name: redis_password
+              valueFrom:
+                secretKeyRef:
+                  key: redis-password
+                  name: redis
+                  optional: false
+          imagePullPolicy: IfNotPresent
+          name: crm-hub
+          resources: {}
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: {}
+            privileged: false
+            readOnlyRootFilesystem: false
+            runAsNonRoot: false
+          stdin: true
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          tty: true
       dnsPolicy: ClusterFirst
       imagePullSecrets:
         - name: dockerhub
