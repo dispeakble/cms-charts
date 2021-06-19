@@ -10,7 +10,7 @@ global:
   env: "local"
   redis:
     port: "6379"
-    redis_server: "redis-master"
+    host: "redis-master"
 
 rancher:
   enabled: false
