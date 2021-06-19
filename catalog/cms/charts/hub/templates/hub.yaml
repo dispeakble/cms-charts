@@ -28,9 +28,9 @@ spec:
       containers:
         - env:
             - name: redis_port
-              value: {{ .Values.global.redis.port }}
+              value: "{{ .Values.global.redis.port }}"
             - name: redis_server
-              value: {{ .Values.global.redis.port }}
+              value: "{{ .Values.global.redis.port }}"
             - name: redis_password
               valueFrom:
                 secretKeyRef:
