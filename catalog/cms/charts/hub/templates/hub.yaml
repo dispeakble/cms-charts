@@ -37,6 +37,7 @@ spec:
                   key: redis-password
                   name: redis
                   optional: false
+          image: {{ .Values.global.images.hub }}
           imagePullPolicy: IfNotPresent
           name: crm-hub
           resources: {}
@@ -50,7 +51,6 @@ spec:
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
           tty: true
-        image: {{ .Values.global.images.hub }}
       dnsPolicy: ClusterFirst
       imagePullSecrets:
         - name: dockerhub
