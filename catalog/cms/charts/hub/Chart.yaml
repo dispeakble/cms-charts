@@ -7,3 +7,4 @@ type: application
 version: 0.1.0
 metadata:
   name: cms-hub
+  namespace: {{ .Values.global.namespace }}
