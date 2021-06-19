@@ -1,12 +1,12 @@
 namespace: default
 questions:
-- variable: redis.host
+- variable: global.redis.host
   default: "redis-master"
   description: "Specify the Redis host"
   type: string
   label: Redis host
   group: "Redis"
-- variable: redis.port
+- variable: global.redis.port
   default: "6379"
   description: "Specify the Redis port"
   type: string
