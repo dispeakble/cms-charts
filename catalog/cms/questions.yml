@@ -1,4 +1,4 @@
-namespace: {{ .Values.global.namespace | default }}
+namespace: default
 questions:
 - variable: redis.host
   default: "redis-master"
