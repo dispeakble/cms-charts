@@ -26,6 +26,7 @@ spec:
         workload.user.cattle.io/workloadselector: deployment-default-crm-hub
     spec:
       containers:
+        image: "{{ .Values.global.images.hub }}"
         - env:
             - name: redis_port
               value: "{{ .Values.global.redis.port }}"
@@ -37,7 +38,7 @@ spec:
                   key: redis-password
                   name: redis
                   optional: false
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           name: crm-hub
           resources: {}
           securityContext:
