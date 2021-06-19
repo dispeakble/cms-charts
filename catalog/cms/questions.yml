@@ -1,4 +1,4 @@
-namespace: {{ .Values.global.namespace }}
+namespace: {{ .Values.global.namespace | default }}
 questions:
 - variable: global.redis.host
   default: { { .Values.global.redis.host } }
