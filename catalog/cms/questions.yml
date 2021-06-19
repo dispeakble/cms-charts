@@ -1,12 +1,12 @@
 namespace: {{ .Values.global.namespace | default }}
 questions:
-- variable: global.redis.host
+- variable: redis.host
   default: "{{ .Values.global.redis.host }}"
   description: "Specify the Redis host"
   type: string
   label: Redis host
   group: "Redis"
-- variable: global.redis.port
+- variable: redis.port
   default: "{{ .Values.global.redis.port }}"
   description: "Specify the Redis port"
   type: string
