@@ -4,17 +4,17 @@ metadata:
   generation: 1
   labels:
     cattle.io/creator: norman
-    workload.user.cattle.io/workloadselector: deployment-default-cms-hub
-  name: cms-hub
+    workload.user.cattle.io/workloadselector: deployment-default-cms-system
+  name: cms-system
   namespace: {{ .Values.namespace }}
-  selfLink: /apis/apps/v1/namespaces/default/deployments/cms-hub
+  selfLink: /apis/apps/v1/namespaces/default/deployments/cms-system
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      workload.user.cattle.io/workloadselector: deployment-default-cms-hub
+      workload.user.cattle.io/workloadselector: deployment-default-cms-system
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -24,23 +24,25 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        workload.user.cattle.io/workloadselector: deployment-default-cms-hub
+        workload.user.cattle.io/workloadselector: deployment-default-cms-system
     spec:
       containers:
         - env:
-            - name: redis_port
-              value: "{{ .Values.global.redis.port }}"
-            - name: redis_server
-              value: "{{ .Values.global.redis.host }}"
-            - name: redis_password
-              valueFrom:
-                secretKeyRef:
-                  key: redis-password
-                  name: redis
-                  optional: false
-          image: {{ .Values.global.images.hub }}
+          - name: backend_port
+            value: "9696"
+          - name: redis_port
+            value: "{{ .Values.global.redis.port }}"
+          - name: redis_server
+            value: "{{ .Values.global.redis.host }}"
+          - name: redis_password
+            valueFrom:
+              secretKeyRef:
+                key: redis-password
+                name: redis
+                optional: false
+          image: {{ .Values.global.images.system }}
           imagePullPolicy: IfNotPresent
-          name: cms-hub
+          name: cms-system
           resources: {}
           securityContext:
             allowPrivilegeEscalation: false
