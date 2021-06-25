@@ -8,7 +8,7 @@ global:
   namespace: default
   images:
     hub: dispeakble/crm-hub:1624631394
-    db: dispeakble/crm-hub:1624631394
+    db: dispeakble/crm-db:1624631394
     proxy: dispeakble/crm-proxy:1624130363
     system: dispeakble/crm-system:1624130363
     bucket: dispeakble/crm-bucket:1624130363
