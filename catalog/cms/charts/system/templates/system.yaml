@@ -29,11 +29,11 @@ spec:
       containers:
         - env:
           - name: backend_port
-            value: {{ .Values.global.proxy.ports.admin }}
+            value: "{{ .Values.global.proxy.ports.admin }}"
           - name: redis_port
-            value: {{ .Values.global.redis.port }}
+            value: "{{ .Values.global.redis.port }}"
           - name: redis_server
-            value: {{ .Values.global.redis.host }}
+            value: "{{ .Values.global.redis.host }}"
           - name: redis_password
             valueFrom:
               secretKeyRef:
