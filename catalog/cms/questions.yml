@@ -12,13 +12,13 @@ questions:
   type: string
   label: Redis port
   group: "Redis"
-- variable: proxy.ports.admin
+- variable: global.proxy.ports.admin
   default: "9696"
   description: "Specify the admin port"
   type: string
   label: Admin port
   group: "Proxy"
-- variable: proxy.ports.public
+- variable: global.proxy.ports.public
   default: "9797"
   description: "Specify the public port"
   type: string

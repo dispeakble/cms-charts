@@ -3,10 +3,6 @@ replicaCount: 1
 nameOverride: ''
 fullnameOverride: ''
 
-proxy:
-  ports:
-    admin: "9696"
-    public: "9797"
 global:
   version: "0.1.0"
   namespace: default
@@ -25,3 +21,7 @@ global:
     host: ""
     user: ""
     password: ""
+  proxy:
+    ports:
+      admin: "9696"
+      public: "9797"
