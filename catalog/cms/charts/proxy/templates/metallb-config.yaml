@@ -1,0 +1,13 @@
+apiVersion: v1
+data:
+  config: |
+    address-pools:
+    - name: default
+      protocol: layer2
+      addresses:
+      {{/* - {{ .Values.metallbAddresses }} */}}
+      - 192.168.42.159-192.168.42.159
+kind: ConfigMap
+metadata:
+  name: config
+  namespace: metallb-system
