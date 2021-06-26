@@ -24,3 +24,27 @@ questions:
   type: string
   label: Public port
   group: "Proxy"
+- variable: global.db.name
+  default: "cms"
+  description: "Specify the default Database Name"
+  type: string
+  label: Database name
+  group: "Database"
+- variable: global.db.host
+  default: "postgresql-ha-pgpool"
+  description: "Specify the default Database Host"
+  type: string
+  label: Database host
+  group: "Database"
+- variable: global.db.user
+  default: "cms"
+  description: "Specify the default Database Username"
+  type: string
+  label: Database username
+  group: "Database"
+- variable: global.db.password
+  default: "0MG9DtWxT@t89*6"
+  description: "Specify the default Database Password"
+  type: string
+  label: Database password
+  group: "Database"
