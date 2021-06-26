@@ -17,10 +17,10 @@ global:
     port: "6379"
     host: "redis-master"
   db:
-    name: ""
-    host: ""
-    user: ""
-    password: ""
+    name: "cms"
+    host: "postgresql-ha-pgpool"
+    user: "cms"
+    password: "0MG9DtWxT@t89*6"
   proxy:
     ports:
       admin: "9696"
