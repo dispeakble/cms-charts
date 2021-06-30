@@ -9,7 +9,7 @@ global:
   images:
     hub: dispeakble/crm-hub:1624631394
     db: dispeakble/crm-db:1624653200
-    proxy: dispeakble/crm-proxy:1624130363
+    proxy: dispeakble/crm-proxy:1625061871
     system: dispeakble/crm-system:1624130363
     bucket: dispeakble/crm-bucket:1624130363
   env: "local"
