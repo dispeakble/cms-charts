@@ -1,0 +1,34 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: cms-proxy
+spec:
+  selector:
+    matchLabels:
+      app: cms-proxy
+  template:
+    metadata:
+      labels:
+        app: cms-proxy
+    spec:
+      containers:
+        - name: cms-proxy
+          image: {{ .Values.global.images.proxy }}
+          ports:
+            - name: http
+              containerPort: 9696
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cms-proxy
+spec:
+  ports:
+    - name: http
+      port: 9696
+      protocol: TCP
+      targetPort: 9696
+  selector:
+    app: cms-proxy
+  type: LoadBalancer
