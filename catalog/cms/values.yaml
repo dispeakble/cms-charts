@@ -9,8 +9,8 @@ global:
   images:
     hub: dispeakble/crm-hub:1625317330
     db: dispeakble/crm-db:1625317330
-    proxy: dispeakble/crm-proxy:1625317330
-    system: dispeakble/crm-system:1625317330
+    proxy: dispeakble/crm-proxy:1625764915
+    system: dispeakble/crm-system:1625764915
     bucket: dispeakble/crm-bucket:1625317330
   env: "local"
   redis:
