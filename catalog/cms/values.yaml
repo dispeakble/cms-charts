@@ -7,11 +7,11 @@ global:
   version: "0.1.0"
   namespace: default
   images:
-    hub: dispeakble/crm-hub:1626113146
-    db: dispeakble/crm-db:1626113146
-    proxy: dispeakble/crm-proxy:1626113146
-    system: dispeakble/crm-system:1626113146
-    bucket: dispeakble/crm-bucket:1626113146
+    hub: dispeakble/crm-hub:1626251436
+    db: dispeakble/crm-db:1626251436
+    proxy: dispeakble/crm-proxy:1626251436
+    system: dispeakble/crm-system:1626251436
+    bucket: dispeakble/crm-bucket:1626251436
   env: "local"
   redis:
     port: "6379"
