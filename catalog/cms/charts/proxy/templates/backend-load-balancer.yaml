@@ -1,17 +1,17 @@
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: admin.fakeclient.com
-  namespace: default
-spec:
-  rules:
-    - host: admin.fakeclient.com
-      http:
-        paths:
-          - backend:
-              serviceName: cms-proxy-service
-              servicePort: 9696
-            path: /
-            pathType: ImplementationSpecific
-status:
-  loadBalancer: {}
+#apiVersion: extensions/v1beta1
+#kind: Ingress
+#metadata:
+#  name: admin.fakeclient.com
+#  namespace: default
+#spec:
+#  rules:
+#    - host: admin.fakeclient.com
+#      http:
+#        paths:
+#          - backend:
+#              serviceName: cms-proxy-service
+#              servicePort: 9696
+#            path: /
+#            pathType: ImplementationSpecific
+#status:
+#  loadBalancer: {}
