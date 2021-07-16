@@ -30,9 +30,9 @@ spec:
       containers:
         - env:
           - name: backend_port
-            value: "9696"
+            value: "30969"
           - name: public_port
-            value: "9797"
+            value: "30979"
           - name: redis_port
             value: "{{ .Values.global.redis.port }}"
           - name: redis_server
