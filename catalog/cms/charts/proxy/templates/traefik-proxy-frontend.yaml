@@ -1,27 +1,27 @@
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  labels:
-    cattle.io/creator: norman
-  managedFields:
-    - apiVersion: extensions/v1beta1
-      fieldsType: FieldsV1
-      manager: rancher
-      operation: Update
-      time: "2021-07-15T22:36:33Z"
-  name: fakeclient.com
-  namespace: default
-  selfLink: /apis/extensions/v1beta1/namespaces/default/ingresses/fakeclient.com
-spec:
-  rules:
-    - host: fakeclient.com
-      http:
-        paths:
-          - backend:
-              serviceName: cms-frontend-proxy
-              servicePort: 9797
-            path: /
-            pathType: ImplementationSpecific
-status:
-  loadBalancer: {}
+#---
+#apiVersion: extensions/v1beta1
+#kind: Ingress
+#metadata:
+#  labels:
+#    cattle.io/creator: norman
+#  managedFields:
+#    - apiVersion: extensions/v1beta1
+#      fieldsType: FieldsV1
+#      manager: rancher
+#      operation: Update
+#      time: "2021-07-15T22:36:33Z"
+#  name: fakeclient.com
+#  namespace: default
+#  selfLink: /apis/extensions/v1beta1/namespaces/default/ingresses/fakeclient.com
+#spec:
+#  rules:
+#    - host: fakeclient.com
+#      http:
+#        paths:
+#          - backend:
+#              serviceName: cms-frontend-proxy
+#              servicePort: 9797
+#            path: /
+#            pathType: ImplementationSpecific
+#status:
+#  loadBalancer: {}
