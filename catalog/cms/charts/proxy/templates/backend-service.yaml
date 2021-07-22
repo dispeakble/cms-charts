@@ -45,7 +45,6 @@ metadata:
   namespace: default
   resourceVersion: "134891"
   selfLink: /api/v1/namespaces/default/services/cms-proxy-backend-mlb
-  uid: 70442425-22f9-4ff0-a6da-24d3af5a9fb5
 spec:
   clusterIP: None
   ports:

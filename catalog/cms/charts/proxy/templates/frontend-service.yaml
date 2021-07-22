@@ -46,7 +46,6 @@ metadata:
   namespace: default
   resourceVersion: "11476"
   selfLink: /api/v1/namespaces/default/services/cms-proxy-frontend-service
-  uid: ff572228-2995-4592-9c4c-dd8dabb55abf
 spec:
   clusterIP: 10.43.97.22
   ports:
