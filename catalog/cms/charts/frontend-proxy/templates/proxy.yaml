@@ -4,17 +4,17 @@ metadata:
   generation: 1
   labels:
     cattle.io/creator: norman
-    workload.user.cattle.io/workloadselector: deployment-default-cms-proxy
+    workload.user.cattle.io/workloadselector: deployment-default-cms-frontend-proxy
   name: cms-proxy
   namespace: {{ .Values.namespace }}
-  selfLink: /apis/apps/v1/namespaces/default/deployments/cms-proxy
+  selfLink: /apis/apps/v1/namespaces/default/deployments/cms-frontend-proxy
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      workload.user.cattle.io/workloadselector: deployment-default-cms-proxy
+      workload.user.cattle.io/workloadselector: deployment-default-cms-frontend-proxy
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -24,14 +24,12 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: cms-proxy
-        workload.user.cattle.io/workloadselector: deployment-default-cms-proxy
+        app: cms-proxy-frontend
+        workload.user.cattle.io/workloadselector: deployment-default-cms-frontend-proxy
     spec:
       containers:
         - env:
           - name: backend_port
-            value: "30969"
-          - name: public_port
             value: "30979"
           - name: redis_port
             value: "{{ .Values.global.redis.port }}"
@@ -45,9 +43,9 @@ spec:
                 key: redis-password
                 name: redis
                 optional: false
-          image: {{ .Values.global.images.proxy }}
+          image: {{ .Values.global.images.frontendproxy }}
           imagePullPolicy: IfNotPresent
-          name: cms-proxy
+          name: cms-frontend-proxy
           resources: {}
           securityContext:
             allowPrivilegeEscalation: false
