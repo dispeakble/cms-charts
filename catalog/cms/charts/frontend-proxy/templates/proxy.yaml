@@ -5,7 +5,7 @@ metadata:
   labels:
     cattle.io/creator: norman
     workload.user.cattle.io/workloadselector: deployment-default-cms-frontend-proxy
-  name: cms-proxy
+  name: cms-frontend-proxy
   namespace: {{ .Values.namespace }}
   selfLink: /apis/apps/v1/namespaces/default/deployments/cms-frontend-proxy
 spec:
