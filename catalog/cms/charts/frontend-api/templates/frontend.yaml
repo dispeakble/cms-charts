@@ -29,7 +29,7 @@ spec:
       containers:
         - env:
           - name: backend_port
-            value: "{{ .Values.global.proxy.ports.admin }}"
+            value: "{{ .Values.global.proxy.ports.public }}"
           - name: redis_port
             value: "{{ .Values.global.redis.port }}"
           - name: redis_server
