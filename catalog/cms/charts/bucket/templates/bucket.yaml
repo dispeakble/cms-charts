@@ -52,6 +52,9 @@ spec:
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
           tty: true
+          volumeMounts:
+            - mountPath: /usr/src/var
+              name: bucket
       dnsPolicy: ClusterFirst
       imagePullSecrets:
         - name: dockerhub
@@ -59,4 +62,8 @@ spec:
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
+      volumes:
+        - name: bucket
+          persistentVolumeClaim:
+            claimName: bucket
 status: {}
