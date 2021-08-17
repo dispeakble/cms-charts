@@ -63,7 +63,9 @@ spec:
       securityContext: {}
       terminationGracePeriodSeconds: 30
       volumes:
-        - name: bucket-pv-storage
-          persistentVolumeClaim:
-            claimName: bucket-pv-claim
+        data:
+          mode: "defaultStorageClass"
+          defaultStorageClass:
+            requests:
+              storage: 20Gi
 status: {}
