@@ -1,7 +1,7 @@
 namespace: default
 questions:
 - variable: global.redis.host
-  default: "redis-cluster-master"
+  default: "redis-master"
   description: "Specify the Redis host"
   type: string
   label: Redis host

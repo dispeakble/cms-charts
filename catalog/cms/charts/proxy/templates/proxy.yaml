@@ -43,7 +43,7 @@ spec:
             valueFrom:
               secretKeyRef:
                 key: redis-password
-                name: redis-cluster
+                name: redis
                 optional: false
           image: {{ .Values.global.images.proxy }}
           imagePullPolicy: IfNotPresent
