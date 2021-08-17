@@ -1,3 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: bucket-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: longhorn
+  resources:
+    requests:
+      storage: 20Gi
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -54,7 +66,7 @@ spec:
           tty: true
           volumeMounts:
             - mountPath: "/usr/src/api/var"
-              name: bucket-pv-storage
+              name: bucket-volume
       dnsPolicy: ClusterFirst
       imagePullSecrets:
         - name: dockerhub
@@ -63,9 +75,8 @@ spec:
       securityContext: {}
       terminationGracePeriodSeconds: 30
       volumes:
-        data:
-          mode: "defaultStorageClass"
-          defaultStorageClass:
-            requests:
-              storage: 20Gi
+        - name: mysql-volume
+          persistentVolumeClaim:
+            claimName: bucket-pvc
+
 status: {}
