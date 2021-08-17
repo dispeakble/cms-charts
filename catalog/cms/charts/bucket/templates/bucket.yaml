@@ -36,7 +36,7 @@ spec:
             valueFrom:
               secretKeyRef:
                 key: redis-password
-                name: redis
+                name: redis-cluster
                 optional: false
           image: {{ .Values.global.images.bucket }}
           imagePullPolicy: IfNotPresent
@@ -53,7 +53,7 @@ spec:
           terminationMessagePolicy: File
           tty: true
           volumeMounts:
-            - mountPath: /usr/src/var
+            - mountPath: /usr/src/api/var
               name: bucket
       dnsPolicy: ClusterFirst
       imagePullSecrets:
