@@ -75,7 +75,7 @@ spec:
       securityContext: {}
       terminationGracePeriodSeconds: 30
       volumes:
-        - name: mysql-volume
+        - name: bucket-volume
           persistentVolumeClaim:
             claimName: bucket-pvc
 
