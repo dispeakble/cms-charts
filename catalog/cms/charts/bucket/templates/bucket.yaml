@@ -53,8 +53,8 @@ spec:
           terminationMessagePolicy: File
           tty: true
           volumeMounts:
-            - mountPath: /usr/src/api/var
-              name: bucket
+            - mountPath: "/usr/src/api/var"
+              name: bucket-pv-storage
       dnsPolicy: ClusterFirst
       imagePullSecrets:
         - name: dockerhub
@@ -63,7 +63,7 @@ spec:
       securityContext: {}
       terminationGracePeriodSeconds: 30
       volumes:
-        - name: bucket
+        - name: bucket-pv-storage
           persistentVolumeClaim:
-            claimName: bucket
+            claimName: bucket-pv-claim
 status: {}
