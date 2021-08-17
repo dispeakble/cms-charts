@@ -37,9 +37,9 @@ spec:
             - name: pg_password
               value: "{{ .Values.global.db.password }}"
             - name: redis_port
-              value: "{{ .Values.global.redis-headless.port }}"
+              value: "{{ .Values.global.redis_headless.port }}"
             - name: redis_server
-              value: "{{ .Values.global.redis-headless.host }}"
+              value: "{{ .Values.global.redis_headless.host }}"
             - name: redis_password
               valueFrom:
                 secretKeyRef:

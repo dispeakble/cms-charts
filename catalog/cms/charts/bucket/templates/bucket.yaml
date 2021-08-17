@@ -29,9 +29,9 @@ spec:
       containers:
         - env:
           - name: redis_port
-            value: "{{ .Values.global.redis-headless.port }}"
+            value: "{{ .Values.global.redis_headless.port }}"
           - name: redis_server
-            value: "{{ .Values.global.redis-headless.host }}"
+            value: "{{ .Values.global.redis_headless.host }}"
           - name: redis_password
             valueFrom:
               secretKeyRef:
