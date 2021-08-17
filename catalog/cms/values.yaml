@@ -17,7 +17,7 @@ global:
   env: "local"
   redis:
     port: "6379"
-    host: "redis-cluster"
+    host: "redis-cluster-headless"
   db:
     name: "cms"
     host: "postgresql-ha-pgpool"
