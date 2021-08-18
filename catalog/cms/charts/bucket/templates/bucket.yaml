@@ -65,7 +65,7 @@ spec:
           terminationMessagePolicy: File
           tty: true
           volumeMounts:
-            - mountPath: "/usr/src/api/var"
+            - mountPath: "/usr/src/var"
               name: bucket-volume
       dnsPolicy: ClusterFirst
       imagePullSecrets:
