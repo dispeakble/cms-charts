@@ -12,7 +12,6 @@ global:
     proxy: dispeakble/crm-proxy:1631711638
     frontendproxy: dispeakble/crm-frontend-proxy:1631711638
     frontendapi: dispeakble/crm-frontend-api:1631711638
-    frontendclient: dispeakble/crm-frontend-client:1631711638
     system: dispeakble/crm-system:1631711638
     bucket: dispeakble/crm-bucket:1631711638
   env: "local"
