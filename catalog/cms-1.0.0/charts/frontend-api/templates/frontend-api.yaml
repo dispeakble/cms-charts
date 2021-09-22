@@ -28,6 +28,8 @@ spec:
     spec:
       containers:
         - env:
+          - name: NODE_ENV
+            value: "production"
           - name: backend_port
             value: "{{ .Values.global.proxy.ports.public }}"
           - name: redis_port
