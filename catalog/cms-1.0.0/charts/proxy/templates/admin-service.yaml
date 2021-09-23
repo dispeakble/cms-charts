@@ -60,3 +60,50 @@ spec:
   type: ClusterIP
 status:
   loadBalancer: {}
+
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    field.cattle.io/ingressState: '{"YWRtaW4tbGIvZGVmYXVsdC9hZG1pbi5kb3NpZG93ZWIuY29tLy85Njk2":"","ZG9zaWRvd2ViY29t":"p-c5cmv:dosidowebcom"}'
+  generation: 1
+  labels:
+    cattle.io/creator: norman
+  managedFields:
+    - apiVersion: extensions/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:field.cattle.io/creatorId: {}
+            f:field.cattle.io/ingressState: {}
+          f:labels:
+            .: {}
+            f:cattle.io/creator: {}
+        f:spec:
+          f:rules: {}
+          f:tls: {}
+      manager: rancher
+      operation: Update
+  name: admin-lb
+  namespace: default
+  resourceVersion: "9913"
+  selfLink: /apis/extensions/v1beta1/namespaces/default/ingresses/admin-lb
+spec:
+  rules:
+    - host: admin.dosidoweb.com
+      http:
+        paths:
+          - backend:
+              serviceName: admin-service
+              servicePort: 9696
+            pathType: ImplementationSpecific
+  tls:
+    - hosts:
+        - admin.dosidoweb.com
+      secretName: dosidowebcom
+status:
+  loadBalancer: {}

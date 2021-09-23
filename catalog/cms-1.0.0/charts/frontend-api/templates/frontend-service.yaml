@@ -60,3 +60,48 @@ spec:
   type: ClusterIP
 status:
   loadBalancer: {}
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+  generation: 1
+  labels:
+    cattle.io/creator: norman
+  managedFields:
+    - apiVersion: extensions/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:field.cattle.io/creatorId: {}
+            f:field.cattle.io/ingressState: {}
+          f:labels:
+            .: {}
+            f:cattle.io/creator: {}
+        f:spec:
+          f:rules: {}
+          f:tls: {}
+      manager: rancher
+      operation: Update
+  name: frontend-lb
+  namespace: default
+  resourceVersion: "5921"
+  selfLink: /apis/extensions/v1beta1/namespaces/default/ingresses/frontend-lb
+spec:
+  rules:
+    - host: dosidoweb.com
+      http:
+        paths:
+          - backend:
+              serviceName: frontend-api-proxy
+              servicePort: 9797
+            pathType: ImplementationSpecific
+  tls:
+    - hosts:
+        - dosidoweb.com
+      secretName: dosidowebcom
+status:
+  loadBalancer: {}
