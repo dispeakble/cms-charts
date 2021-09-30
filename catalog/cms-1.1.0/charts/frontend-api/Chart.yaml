@@ -1,10 +1,10 @@
 apiVersion: v2
-appVersion: 1.0.0
+appVersion: 1.1.0
 description: Install Frontend Api
 icon: https://as2.ftcdn.net/v2/jpg/03/78/06/07/1000_F_378060747_6Z3pohk90HAcfbGog7X1DizBU7NCQeqM.jpg
 name: cms-frontend-api
 type: application
-version: 1.0.0
+version: 1.1.0
 metadata:
   name: cms-frontend-api
 
