@@ -1,0 +1,13 @@
+apiVersion: v2
+appVersion: 1.0.0
+description: Install Db
+icon: https://as2.ftcdn.net/v2/jpg/03/78/06/07/1000_F_378060747_6Z3pohk90HAcfbGog7X1DizBU7NCQeqM.jpg
+name: cms-db
+type: application
+version: 1.0.0
+metadata:
+  name: cms-db
+
+dependencies:
+  - name: redis
+    condition: redis.enabled
