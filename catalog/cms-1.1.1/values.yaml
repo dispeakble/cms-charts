@@ -1,0 +1,32 @@
+<namespace: default
+replicaCount: 1
+nameOverride: ''
+fullnameOverride: ''
+
+global:
+  version: "1.1.0"
+  namespace: default
+  images:
+    hub: dispeakble/crm-hub:1633435243
+    db: dispeakble/crm-db:1633435243
+    proxy: dispeakble/crm-proxy:1633435243
+    frontendproxy: dispeakble/crm-frontend-proxy:1633435243
+    frontendapi: dispeakble/crm-frontend-api:1633435243
+    system: dispeakble/crm-system:1633435243
+    bucket: dispeakble/crm-bucket:1633435243
+  env: "local"
+  redis:
+    port: "6379"
+    host: "redis-master"
+  redis_headless:
+    port: "6379"
+    host: "redis-headless"
+  db:
+    name: "cms"
+    host: "postgresql-ha-pgpool"
+    user: "cms"
+    password: "0MG9DtWxT@t89*6"
+  proxy:
+    ports:
+      admin: "9696"
+      public: "9797"
