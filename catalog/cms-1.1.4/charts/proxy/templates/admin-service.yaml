@@ -48,7 +48,6 @@ metadata:
   resourceVersion: "9530"
   selfLink: /api/v1/namespaces/default/services/admin-service
 spec:
-  clusterIP: 10.43.108.91
   ports:
     - name: admin-port
       port: 9696

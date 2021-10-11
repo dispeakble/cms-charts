@@ -5,6 +5,7 @@ metadata:
     field.cattle.io/ipAddresses: "null"
     field.cattle.io/targetDnsRecordIds: "null"
     field.cattle.io/targetWorkloadIds: '["deployment:default:cms-frontend-api"]'
+  creationTimestamp: "2021-10-11T08:37:45Z"
   labels:
     cattle.io/creator: norman
   managedFields:
@@ -17,6 +18,7 @@ metadata:
             f:workloadID_frontend-service: {}
       manager: Go-http-client
       operation: Update
+      time: "2021-10-11T08:37:45Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -43,14 +45,14 @@ metadata:
           f:type: {}
       manager: rancher
       operation: Update
+      time: "2021-10-11T08:37:45Z"
   name: frontend-service
   namespace: default
-  resourceVersion: "3649332"
+  resourceVersion: "3668707"
   selfLink: /api/v1/namespaces/default/services/frontend-service
 spec:
-  clusterIP: 10.43.10.117
   ports:
-    - name: frontend-port
+    - name: frontendport
       port: 9797
       protocol: TCP
       targetPort: 9797
