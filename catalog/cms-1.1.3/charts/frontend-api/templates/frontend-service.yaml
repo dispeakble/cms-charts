@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
+    field.cattle.io/creatorId: user-xmx26
     field.cattle.io/ipAddresses: "null"
     field.cattle.io/targetDnsRecordIds: "null"
     field.cattle.io/targetWorkloadIds: '["deployment:default:cms-frontend-api"]'
@@ -15,6 +16,8 @@ metadata:
           f:selector:
             .: {}
             f:workloadID_frontend-service: {}
+      manager: Go-http-client
+      operation: Update
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -40,8 +43,11 @@ metadata:
               f:targetPort: {}
           f:sessionAffinity: {}
           f:type: {}
+      manager: rancher
+      operation: Update
   name: frontend-service
   namespace: default
+  resourceVersion: "3504850"
   selfLink: /api/v1/namespaces/default/services/frontend-service
 spec:
   clusterIP: None
@@ -54,6 +60,8 @@ spec:
     workloadID_frontend-service: "true"
   sessionAffinity: None
   type: ClusterIP
+status:
+  loadBalancer: {}
 
 ---
 apiVersion: extensions/v1beta1
@@ -82,6 +90,7 @@ metadata:
       operation: Update
   name: frontend-lb
   namespace: default
+  resourceVersion: "5921"
   selfLink: /apis/extensions/v1beta1/namespaces/default/ingresses/frontend-lb
 spec:
   rules:
