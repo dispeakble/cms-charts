@@ -11,15 +11,6 @@ metadata:
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
-        f:spec:
-          f:selector:
-            .: {}
-            f:workloadID_admin-service: {}
-      manager: Go-http-client
-      operation: Update
-    - apiVersion: v1
-      fieldsType: FieldsV1
-      fieldsV1:
         f:metadata:
           f:annotations:
             .: {}
@@ -27,10 +18,12 @@ metadata:
             f:field.cattle.io/ipAddresses: {}
             f:field.cattle.io/targetDnsRecordIds: {}
             f:field.cattle.io/targetWorkloadIds: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
           f:labels:
             .: {}
             f:cattle.io/creator: {}
         f:spec:
+          f:clusterIP: {}
           f:ports:
             .: {}
             k:{"port":9696,"protocol":"TCP"}:
@@ -39,17 +32,20 @@ metadata:
               f:port: {}
               f:protocol: {}
               f:targetPort: {}
+          f:selector:
+            .: {}
+            f:workloadID_admin-service: {}
           f:sessionAffinity: {}
           f:type: {}
-      manager: rancher
+      manager: kubectl
       operation: Update
   name: admin-service
   namespace: default
-  resourceVersion: "9530"
   selfLink: /api/v1/namespaces/default/services/admin-service
 spec:
+  clusterIP: None
   ports:
-    - name: admin-port
+    - name: adminport
       port: 9696
       protocol: TCP
       targetPort: 9696
@@ -61,16 +57,23 @@ status:
   loadBalancer: {}
 
 
+
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  annotations:
-    field.cattle.io/ingressState: '{"YWRtaW4tbGIvZGVmYXVsdC9hZG1pbi5kb3NpZG93ZWIuY29tLy85Njk2":"","ZG9zaWRvd2ViY29t":"p-c5cmv:dosidowebcom"}'
   generation: 1
   labels:
     cattle.io/creator: norman
   managedFields:
+    - apiVersion: networking.k8s.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:loadBalancer:
+            f:ingress: {}
+      manager: nginx-ingress-controller
+      operation: Update
     - apiVersion: extensions/v1beta1
       fieldsType: FieldsV1
       fieldsV1:
@@ -79,6 +82,7 @@ metadata:
             .: {}
             f:field.cattle.io/creatorId: {}
             f:field.cattle.io/ingressState: {}
+            f:field.cattle.io/publicEndpoints: {}
           f:labels:
             .: {}
             f:cattle.io/creator: {}
@@ -89,7 +93,6 @@ metadata:
       operation: Update
   name: admin-lb
   namespace: default
-  resourceVersion: "9913"
   selfLink: /apis/extensions/v1beta1/namespaces/default/ingresses/admin-lb
 spec:
   rules:
@@ -105,4 +108,6 @@ spec:
         - admin.dosidoweb.com
       secretName: dosidowebcom
 status:
-  loadBalancer: {}
+  loadBalancer:
+    ingress:
+      - ip: 188.214.30.235
