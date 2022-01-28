@@ -7,13 +7,13 @@ global:
   version: "1.3.2"
   namespace: default
   images:
-    hub: dispeakble/crm-hub:1643406843
-    db: dispeakble/crm-db:1643406843
-    proxy: dispeakble/crm-proxy:1643406843
-    frontendproxy: dispeakble/crm-frontend-proxy:1643406843
-    frontendapi: dispeakble/crm-frontend-api:1643406843
-    system: dispeakble/crm-system:1643406843
-    bucket: dispeakble/crm-bucket:1643406843
+    hub: dispeakble/crm-hub:1643410938
+    db: dispeakble/crm-db:1643410938
+    proxy: dispeakble/crm-proxy:1643410938
+    frontendproxy: dispeakble/crm-frontend-proxy:1643410938
+    frontendapi: dispeakble/crm-frontend-api:1643410938
+    system: dispeakble/crm-system:1643410938
+    bucket: dispeakble/crm-bucket:1643410938
   env: "local"
   redis:
     port: "6379"
