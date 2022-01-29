@@ -15,6 +15,27 @@ global:
     system: dispeakble/crm-system:1643468069
     bucket: dispeakble/crm-bucket:1643468069
   env: "local"
+  redis:
+    port: "6379"
+    host: "redis-master"
+  redis_headless:
+    port: "6379"
+    host: "redis-headless"
+  db:
+    name: "cms"
+    host: "postgresql-ha-pgpool"
+    user: "cms"
+      valueFrom:
+       secretKeyRef:
+         key: global.db.user
+         name: redis
+         optional: false
+    password:
+      valueFrom:
+        secretKeyRef:
+          key: global.db.password
+          name: redis
+          optional: false
   proxy:
     ports:
       admin: "9696"
