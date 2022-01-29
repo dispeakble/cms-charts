@@ -25,17 +25,7 @@ global:
     name: "cms"
     host: "postgresql-ha-pgpool"
     user: "cms"
-      valueFrom:
-       secretKeyRef:
-         key: global.db.user
-         name: redis
-         optional: false
-    password:
-      valueFrom:
-        secretKeyRef:
-          key: global.db.password
-          name: redis
-          optional: false
+    password: "0MG9DtWxT@t89*6"
   proxy:
     ports:
       admin: "9696"
