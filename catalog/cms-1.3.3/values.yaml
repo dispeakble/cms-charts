@@ -1,0 +1,21 @@
+<namespace: default
+replicaCount: 1
+nameOverride: ''
+fullnameOverride: ''
+
+global:
+  version: "1.3.3"
+  namespace: default
+  images:
+    hub: dispeakble/crm-hub:1643468069
+    db: dispeakble/crm-db:1643468069
+    proxy: dispeakble/crm-proxy:1643468069
+    frontendproxy: dispeakble/crm-frontend-proxy:1643468069
+    frontendapi: dispeakble/crm-frontend-api:1643468069
+    system: dispeakble/crm-system:1643468069
+    bucket: dispeakble/crm-bucket:1643468069
+  env: "local"
+  proxy:
+    ports:
+      admin: "9696"
+      public: "9797"
