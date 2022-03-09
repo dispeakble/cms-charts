@@ -1,0 +1,56 @@
+namespace: default
+questions:
+- variable: global.redis.host
+  default: "redis-master"
+  description: "Specify the Redis host"
+  type: string
+  label: Redis host
+  group: "Redis"
+- variable: global.redis.port
+  default: "6379"
+  description: "Specify the Redis port"
+  type: string
+  label: Redis port
+  group: "Redis"
+- variable: global.proxy.ports.admin
+  default: "9696"
+  description: "Specify the admin port"
+  type: string
+  label: Admin port
+  group: "Proxy"
+- variable: global.proxy.ports.public
+  default: "9797"
+  description: "Specify the public port"
+  type: string
+  label: Public port
+  group: "Proxy"
+- variable: global.db.name
+  default: "main"
+  description: "Deprecated. Specify the default Database Name"
+  type: string
+  label: Database name
+  group: "Database"
+- variable: global.db.connections
+  default: "main"
+  description: "Specify the database names separated by comma (,)"
+  type: string
+  label: Database connections
+  group: "Database"
+- variable: global.db.host
+  default: "postgresql-ha-pgpool"
+  description: "Specify the default Database Host"
+  type: string
+  label: Database host
+  group: "Database"
+- variable: global.db.user
+  default: "cms"
+  description: "Specify the default Database Username"
+  type: string
+  label: Database username
+  group: "Database"
+- variable: global.db.password
+  default: "0MG9DtWxT@t89*6"
+  description: "Specify the default Database Password"
+  type: string
+  label: Database password
+  group: "Database"
