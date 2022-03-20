@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  generation: 1
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-cms-db
+  name: cms-db
+  namespace: {{ .Values.namespace }}
+  selfLink: /apis/apps/v1/namespaces/default/deployments/cms-db
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-cms-db
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-cms-db
+    spec:
+      containers:
+        - env:
+            - name: pg_host
+              value: "{{ .Values.global.db.host }}"
+            - name: pg_db
+              value: "{{ .Values.global.db.name }}"
+            - name: pg_connections
+              value: "{{ .Values.global.db.connections }}"
+            - name: pg_user
+              value: "{{ .Values.global.db.user }}"
+            - name: pg_password
+              value: "{{ .Values.global.db.password }}"
+            - name: redis_port
+              value: "{{ .Values.global.redis.port }}"
+            - name: redis_server
+              value: "{{ .Values.global.redis.host }}"
+            - name: redis_password
+              valueFrom:
+                secretKeyRef:
+                  key: redis-password
+                  name: redis
+                  optional: false
+          image: {{ .Values.global.images.db }}
+          imagePullPolicy: IfNotPresent
+          name: cms-db
+          resources: {}
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: {}
+            privileged: false
+            readOnlyRootFilesystem: false
+            runAsNonRoot: false
+          stdin: true
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          tty: true
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+        - name: dockerhub
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status: {}
