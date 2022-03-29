@@ -28,6 +28,8 @@ spec:
     spec:
       containers:
         - env:
+            - name: app
+              value: "{{ .Values.global.app }}"
             - name: pg_host
               value: "{{ .Values.global.db.host }}"
             - name: pg_db

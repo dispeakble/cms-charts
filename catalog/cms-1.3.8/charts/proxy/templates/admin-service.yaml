@@ -1,0 +1,113 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    field.cattle.io/ipAddresses: "null"
+    field.cattle.io/targetDnsRecordIds: "null"
+    field.cattle.io/targetWorkloadIds: '["deployment:default:cms-proxy"]'
+  labels:
+    cattle.io/creator: norman
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:field.cattle.io/creatorId: {}
+            f:field.cattle.io/ipAddresses: {}
+            f:field.cattle.io/targetDnsRecordIds: {}
+            f:field.cattle.io/targetWorkloadIds: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+          f:labels:
+            .: {}
+            f:cattle.io/creator: {}
+        f:spec:
+          f:clusterIP: {}
+          f:ports:
+            .: {}
+            k:{"port":9696,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector:
+            .: {}
+            f:workloadID_admin-service: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: kubectl
+      operation: Update
+  name: admin-service
+  namespace: default
+  selfLink: /api/v1/namespaces/default/services/admin-service
+spec:
+  clusterIP: None
+  ports:
+    - name: adminport
+      port: 9696
+      protocol: TCP
+      targetPort: 9696
+  selector:
+    workloadID_admin-service: "true"
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
+
+
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  generation: 1
+  labels:
+    cattle.io/creator: norman
+  managedFields:
+    - apiVersion: networking.k8s.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:loadBalancer:
+            f:ingress: {}
+      manager: nginx-ingress-controller
+      operation: Update
+    - apiVersion: extensions/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:field.cattle.io/creatorId: {}
+            f:field.cattle.io/ingressState: {}
+            f:field.cattle.io/publicEndpoints: {}
+          f:labels:
+            .: {}
+            f:cattle.io/creator: {}
+        f:spec:
+          f:rules: {}
+          f:tls: {}
+      manager: rancher
+      operation: Update
+  name: admin-lb
+  namespace: default
+  selfLink: /apis/extensions/v1beta1/namespaces/default/ingresses/admin-lb
+spec:
+  rules:
+    - host: admin.dosidoweb.com
+      http:
+        paths:
+          - backend:
+              serviceName: admin-service
+              servicePort: 9696
+            pathType: ImplementationSpecific
+  tls:
+    - hosts:
+        - admin.dosidoweb.com
+      secretName: dosidowebcom
+status:
+  loadBalancer:
+    ingress:
+      - ip: 188.214.30.235
