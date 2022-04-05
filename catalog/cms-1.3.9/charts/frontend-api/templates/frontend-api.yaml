@@ -30,6 +30,10 @@ spec:
         - env:
           - name: app
             value: "{{ .Values.global.app.name }}"
+          - name: app_domain
+            value: "{{ .Values.global.app.website.domain }}"
+          - name: tpl_ver
+            value: "{{ .Values.global.app.website.tpl_ver }}"
           - name: backend_port
             value: "{{ .Values.global.proxy.ports.public }}"
           - name: redis_port

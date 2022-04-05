@@ -7,13 +7,13 @@ global:
   version: "1.3.9"
   namespace: default
   images:
-    hub: dispeakble/crm-hub:1649089533
-    db: dispeakble/crm-db:1649089533
-    proxy: dispeakble/crm-proxy:1649089533
-    frontendproxy: dispeakble/crm-frontend-proxy:1649089533
-    frontendapi: dispeakble/crm-frontend-api:1649089533
-    system: dispeakble/crm-system:1649089533
-    bucket: dispeakble/crm-bucket:1649089533
+    hub: dispeakble/crm-hub:1649163401
+    db: dispeakble/crm-db:1649163401
+    proxy: dispeakble/crm-proxy:1649163401
+    frontendproxy: dispeakble/crm-frontend-proxy:1649163401
+    frontendapi: dispeakble/crm-frontend-api:1649163401
+    system: dispeakble/crm-system:1649163401
+    bucket: dispeakble/crm-bucket:1649163401
   app:
     name: "marioviajes"
     website:
@@ -21,6 +21,7 @@ global:
       domain: "marioviajes.com"
       email: "contact@marioviajes.com"
       password: "qwert12345QWERT!@#$%"
+      tpl_ver: "v1"
   redis:
     port: "6379"
     host: "redis-master"
