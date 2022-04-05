@@ -1,10 +1,15 @@
-namespace: default
 questions:
   - variable: global.app.name
     default: "marioviajes"
     description: "Specify the App identifier"
     type: string
     label: App identifier
+    group: "General"
+  - variable: namespace
+    default: "default"
+    description: "Specify the App namespace"
+    type: string
+    label: App namespace
     group: "General"
   - variable: global.app.website.tpl_ver
     default: "v1"

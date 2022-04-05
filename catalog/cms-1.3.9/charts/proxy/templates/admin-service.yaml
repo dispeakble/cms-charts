@@ -40,7 +40,7 @@ metadata:
       manager: kubectl
       operation: Update
   name: admin-service
-  namespace: default
+  namespace: {{ .Values.namespace }}
   selfLink: /api/v1/namespaces/default/services/admin-service
 spec:
   clusterIP: None
@@ -92,7 +92,7 @@ metadata:
       manager: rancher
       operation: Update
   name: admin-lb
-  namespace: default
+  namespace: {{ .Values.namespace }}
   selfLink: /apis/extensions/v1beta1/namespaces/default/ingresses/admin-lb
 spec:
   rules:
