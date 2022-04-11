@@ -47,6 +47,12 @@ questions:
     type: string
     label: Redis host
     group: "Redis"
+  - variable: global.redis.password
+    default: "1gzHwbgfwR"
+    description: "Specify the Redis password"
+    type: string
+    label: Redis password
+    group: "Redis"
   - variable: global.redis.port
     default: "6379"
     description: "Specify the Redis port"

@@ -43,11 +43,7 @@ spec:
           - name: redis_server
             value: "{{ .Values.global.redis.host }}"
           - name: redis_password
-            valueFrom:
-              secretKeyRef:
-                key: redis-password
-                name: redis
-                optional: false
+            value: "{{ .Values.global.redis.password }}"
           image: {{ .Values.global.images.hub }}
           imagePullPolicy: IfNotPresent
           name: cms-hub

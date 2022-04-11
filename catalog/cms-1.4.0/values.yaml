@@ -23,6 +23,7 @@ global:
   redis:
     port: "6379"
     host: "redis-master.default.svc.cluster.local"
+    password: "1gzHwbgfwR"
   redis_headless:
     port: "6379"
     host: "redis-headless"

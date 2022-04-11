@@ -40,11 +40,7 @@ spec:
           - name: session_secret
             value: 1qaz
           - name: redis_password
-            valueFrom:
-              secretKeyRef:
-                key: redis-password
-                name: redis
-                optional: false
+            value: "{{ .Values.global.redis.password }}"
           image: {{ .Values.global.images.proxy }}
           imagePullPolicy: IfNotPresent
           name: cms-proxy
