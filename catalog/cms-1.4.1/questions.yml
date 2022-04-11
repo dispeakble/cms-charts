@@ -5,12 +5,6 @@ questions:
     type: string
     label: App identifier
     group: "General"
-  - variable: namespace
-    default: "default"
-    description: "Specify the App namespace"
-    type: string
-    label: App namespace
-    group: "General"
   - variable: global.app.website.tpl_ver
     default: "v1"
     description: "Specify the App template"

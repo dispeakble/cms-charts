@@ -46,7 +46,6 @@ metadata:
       manager: rancher
       operation: Update
   name: frontend-service
-  namespace: {{ .Values.namespace }}
   selfLink: /api/v1/namespaces/default/services/frontend-service
 spec:
   clusterIP: None
@@ -97,7 +96,6 @@ metadata:
       manager: rancher
       operation: Update
   name: frontend-lb
-  namespace: {{ .Values.namespace }}
   selfLink: /apis/extensions/v1beta1/namespaces/default/ingresses/frontend-lb
 spec:
   rules:
@@ -151,7 +149,6 @@ metadata:
       manager: rancher
       operation: Update
   name: wwwfrontend-lb
-  namespace: {{ .Values.namespace }}
   selfLink: /apis/extensions/v1beta1/namespaces/default/ingresses/wwwfrontend-lb
 spec:
   rules:

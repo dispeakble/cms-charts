@@ -6,7 +6,6 @@ metadata:
     cattle.io/creator: norman
     workload.user.cattle.io/workloadselector: deployment-default-cms-hub
   name: cms-hub
-  namespace: {{ .Values.namespace }}
   selfLink: /apis/apps/v1/namespaces/default/deployments/cms-hub
 spec:
   progressDeadlineSeconds: 600

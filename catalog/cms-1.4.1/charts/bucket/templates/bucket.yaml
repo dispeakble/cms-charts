@@ -18,7 +18,6 @@ metadata:
     cattle.io/creator: norman
     workload.user.cattle.io/workloadselector: deployment-default-cms-bucket
   name: cms-bucket
-  namespace: {{ .Values.namespace }}
   selfLink: /apis/apps/v1/namespaces/default/deployments/cms-bucket
 spec:
   progressDeadlineSeconds: 600
