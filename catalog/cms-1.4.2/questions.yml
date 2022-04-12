@@ -28,13 +28,25 @@ questions:
     description: "Specify the Website Admin Email"
     type: string
     label: Website Admin Email
-    group: "General"
-  - variable: global.app.website.password
+    group: "Admin"
+  - variable: global.app.admin.password
     default: "qwert12345QWERT!@#$%s"
     description: "Specify the Website Admin Password"
     type: string
     label: Website Admin Password
-    group: "General"
+    group: "Admin"
+  - variable: global.app.admin.fname
+    default: "Lorem"
+    description: "Specify the Website Admin First Name"
+    type: string
+    label: Website Admin First Name
+    group: "Admin"
+  - variable: global.app.admin.lname
+    default: "Ipsum"
+    description: "Specify the Website Admin Last Name"
+    type: string
+    label: Website Admin Last Name
+    group: "Admin"
   - variable: global.redis.host
     default: "redis-master.default.svc.cluster.local"
     description: "Specify the Redis host"
