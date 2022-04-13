@@ -1,0 +1,44 @@
+replicaCount: 1
+nameOverride: ''
+fullnameOverride: ''
+
+global:
+  version: "1.4.4"
+  images:
+    hub: dispeakble/crm-hub:1649882417
+    db: dispeakble/crm-db:1649882417
+    proxy: dispeakble/crm-proxy:1649882417
+    frontendproxy: dispeakble/crm-frontend-proxy:1649882417
+    frontendapi: dispeakble/crm-frontend-api:1649882417
+    system: dispeakble/crm-system:1649882417
+    bucket: dispeakble/crm-bucket:1649882417
+  app:
+    name: "marioviajes"
+    version: "1.4.4"
+    website:
+      tpl_ver: "v1"
+      title: "Mario Viajes"
+      domain: "marioviajes.com"
+      email: "contact@marioviajes.com"
+    admin:
+      fname: "Mario"
+      lname: "Viajes"
+      email: "admin@marioviajes.com"
+      password: "1qaz"
+  redis:
+    port: "6379"
+    host: "redis-master.default.svc.cluster.local"
+    password: "1gzHwbgfwR"
+  redis_headless:
+    port: "6379"
+    host: "redis-headless"
+  db:
+    name: "postgres"
+    host: "postgresql-ha-pgpool.default.svc.cluster.local"
+    user: "cms"
+    password: "0MG9DtWxT@t89*6"
+    connections: "main,agency"
+  proxy:
+    ports:
+      admin: "9696"
+      public: "9797"
