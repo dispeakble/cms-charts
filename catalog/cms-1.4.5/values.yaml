@@ -5,13 +5,13 @@ fullnameOverride: ''
 global:
   version: "1.4.5"
   images:
-    hub: dispeakble/crm-hub:1649882417
-    db: dispeakble/crm-db:1649882417
-    proxy: dispeakble/crm-proxy:1649882417
-    frontendproxy: dispeakble/crm-frontend-proxy:1649882417
-    frontendapi: dispeakble/crm-frontend-api:1649882417
-    system: dispeakble/crm-system:1649882417
-    bucket: dispeakble/crm-bucket:1649882417
+    hub: dispeakble/crm-hub:1649932340
+    db: dispeakble/crm-db:1649932340
+    proxy: dispeakble/crm-proxy:1649932340
+    frontendproxy: dispeakble/crm-frontend-proxy:1649932340
+    frontendapi: dispeakble/crm-frontend-api:1649932340
+    system: dispeakble/crm-system:1649932340
+    bucket: dispeakble/crm-bucket:1649932340
   app:
     name: "marioviajes"
     version: "1.4.5"

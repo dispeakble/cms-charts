@@ -30,7 +30,7 @@ questions:
     label: Website Default Email
     group: "General"
   - variable: global.app.admin.email
-    default: "admin@marioaviajes.com"
+    default: "admin@marioviajes.com"
     description: "Specify the Website Admin Email"
     type: string
     label: Website Admin Email
