@@ -37,14 +37,16 @@ spec:
             value: "{{ .Values.global.app.website.domain }}"
           - name: website_email
             value: "{{ .Values.global.app.website.email }}"
+          - name: tpl_ver
+            value: "{{ .Values.global.app.website.tpl_ver }}"
           - name: admin_fname
-            value: "Do"
+            value: "{{ .Values.global.app.admin.fname }}"
           - name: admin_lname
-            value: "SiDo"
+            value: "{{ .Values.global.app.admin.lname }}"
           - name: admin_email
-            value: "admin@dosidoweb.com"
+            value: "{{ .Values.global.app.admin.email }}"
           - name: admin_password
-            value: "1qaz"
+            value: "{{ .Values.global.app.admin.password }}"
           - name: redis_port
             value: "{{ .Values.global.redis.port }}"
           - name: redis_server
