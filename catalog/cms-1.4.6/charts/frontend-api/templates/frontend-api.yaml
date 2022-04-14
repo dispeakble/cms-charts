@@ -21,7 +21,7 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: cms-proxy
+        app: cms-frontend-api
         workload.user.cattle.io/workloadselector: deployment-default-cms-frontend-api
     spec:
       containers:
