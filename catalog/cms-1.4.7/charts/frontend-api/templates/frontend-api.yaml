@@ -40,6 +40,8 @@ spec:
             value: "{{ .Values.global.redis.port }}"
           - name: redis_password
             value: "{{ .Values.global.redis.password }}"
+          - name: NODE_ENV
+            value: "production"
           image: {{ .Values.global.images.frontendapi }}
           imagePullPolicy: IfNotPresent
           name: cms-frontend-api
