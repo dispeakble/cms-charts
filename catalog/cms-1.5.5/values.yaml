@@ -3,7 +3,7 @@ nameOverride: ''
 fullnameOverride: ''
 
 global:
-  version: "1.5.4"
+  version: "1.5.5"
   images:
     hub: dispeakble/crm-hub:1654296547
     db: dispeakble/crm-db:1654296547
@@ -14,7 +14,7 @@ global:
     bucket: dispeakble/crm-bucket:1654296547
   app:
     name: "marioviajes"
-    version: "1.5.4"
+    version: "1.5.5"
     website:
       tpl_ver: "v1"
       title: "Mario Viajes"
