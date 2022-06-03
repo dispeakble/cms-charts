@@ -1,0 +1,4 @@
+forceNodeLabels: "yes"
+nameOverride: ""
+fullnameOverride: ""
+metallbAddresses: 188.214.30.235-188.214.30.235
