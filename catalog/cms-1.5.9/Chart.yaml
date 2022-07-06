@@ -1,0 +1,6 @@
+apiVersion: v2
+name: cms
+description: Clear CMS helm chart
+type: application
+version: 1.5.9
+appVersion: 1.5.9
