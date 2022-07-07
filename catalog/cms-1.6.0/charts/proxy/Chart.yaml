@@ -1,0 +1,11 @@
+apiVersion: v2
+appVersion: 1.6.0
+description: Install Proxy
+icon: https://as2.ftcdn.net/v2/jpg/03/78/06/07/1000_F_378060747_6Z3pohk90HAcfbGog7X1DizBU7NCQeqM.jpg
+name: cms-proxy
+type: application
+version: 1.6.0
+
+dependencies:
+  - name: redis
+    condition: redis.enabled
