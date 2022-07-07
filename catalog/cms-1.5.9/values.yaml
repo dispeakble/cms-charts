@@ -13,17 +13,17 @@ global:
     system: dispeakble/crm-system:1657137505
     bucket: dispeakble/crm-bucket:1657137505
   app:
-    name: "marioviajes"
+    name: "uniqueappname"
     version: "1.5.9"
     website:
       tpl_ver: "v1"
-      title: "Mario Viajes"
-      domain: "marioviajes.com"
-      email: "contact@marioviajes.com"
+      title: "Website Title"
+      domain: "somewebsite.com"
+      email: "contact@somewebsite.com"
     admin:
-      fname: "Mario"
-      lname: "Viajes"
-      email: "admin@marioviajes.com"
+      fname: "Your First Name"
+      lname: "Your Last Name"
+      email: "admin@somewebsite.com"
       password: "1qaz"
   redis:
     port: "6379"
