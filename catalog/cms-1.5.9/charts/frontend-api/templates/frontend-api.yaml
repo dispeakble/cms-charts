@@ -42,6 +42,10 @@ spec:
             value: "{{ .Values.global.redis.password }}"
           - name: NODE_ENV
             value: "production"
+          - name: recaptcha_public_key
+            value: "{{ .Values.global.app.secrets.recaptcha_public_key }}"
+          - name: recaptcha_private_key
+            value: "{{ .Values.global.app.secrets.recaptcha_private_key }}"
           image: {{ .Values.global.images.frontendapi }}
           imagePullPolicy: IfNotPresent
           name: cms-frontend-api

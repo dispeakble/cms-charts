@@ -83,9 +83,6 @@ questions:
     type: string
     label: Public port
     group: "Proxy"
-    type: string
-    label: Database name
-    group: "Database"
   - variable: global.db.connections
     default: "main,agency"
     description: "Specify the database names separated by comma (,)"
@@ -110,3 +107,15 @@ questions:
     type: string
     label: Database password
     group: "Database"
+  - variable: global.app.secrets.recaptcha_public_key
+    default: "6LdNqsESAAAAAPHt1ZG6vr4RBQHoM-eVcE4XB4wJ"
+    description: "Specify the RECAPTCHA public key"
+    type: string
+    label: Recaptcha Public Key
+    group: "Recaptcha"
+  - variable: global.app.secrets.recaptcha_public_key
+    default: "6LdNqsESAAAAANbWPLowt17zjEwNS4MuvVLfX7TQ"
+    description: "Specify the RECAPTCHA private key"
+    type: string
+    label: Recaptcha Private Key
+    group: "Recaptcha"
