@@ -1,0 +1,47 @@
+replicaCount: 1
+nameOverride: ''
+fullnameOverride: ''
+
+global:
+  version: "1.6.2"
+  images:
+    hub: dispeakble/crm-hub:1660486608
+    db: dispeakble/crm-db:1660486608
+    proxy: dispeakble/crm-proxy:1660486608
+    frontendproxy: dispeakble/crm-frontend-proxy:1660486608
+    frontendapi: dispeakble/crm-frontend-api:1660486608
+    system: dispeakble/crm-system:1660486608
+    bucket: dispeakble/crm-bucket:1660486608
+  app:
+    name: "uniqueappname"
+    version: "1.6.2"
+    website:
+      tpl_ver: "v1"
+      title: "Website Title"
+      domain: "somewebsite.com"
+      email: "contact@somewebsite.com"
+    admin:
+      fname: "Your First Name"
+      lname: "Your Last Name"
+      email: "admin@somewebsite.com"
+      password: "1qaz"
+    secrets:
+      recaptcha_public_key: "6LdNqsESAAAAAPHt1ZG6vr4RBQHoM-eVcE4XB4wJ"
+      recaptcha_private_key: "6LdNqsESAAAAANbWPLowt17zjEwNS4MuvVLfX7TQ"
+  redis:
+    port: "6379"
+    host: "redis-master.default.svc.cluster.local"
+    password: "1gzHwbgfwR"
+  redis_headless:
+    port: "6379"
+    host: "redis-headless"
+  db:
+    name: "postgres"
+    host: "postgresql-ha-pgpool.default.svc.cluster.local"
+    user: "cms"
+    password: "0MG9DtWxT@t89*6"
+    connections: "main,agency"
+  proxy:
+    ports:
+      admin: "9696"
+      public: "9797"
