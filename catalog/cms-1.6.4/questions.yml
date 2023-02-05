@@ -1,0 +1,121 @@
+questions:
+  - variable: global.app.name
+    default: "marioviajes"
+    description: "Specify the App identifier"
+    type: string
+    label: App identifier
+    group: "General"
+  - variable: global.app.website.tpl_ver
+    default: "v1"
+    description: "Specify the App template"
+    type: string
+    label: Website template
+    group: "General"
+  - variable: global.app.website.title
+    default: "Mario Viajes"
+    description: "Specify the Website Title"
+    type: string
+    label: Website Title
+    group: "General"
+  - variable: global.app.website.domain
+    default: "marioviajes.com"
+    description: "Specify the Website Domain"
+    type: string
+    label: Website Domain
+    group: "General"
+  - variable: global.app.website.email
+    default: "contact@marioviajes.com"
+    description: "Specify the Website Default Email"
+    type: string
+    label: Website Default Email
+    group: "General"
+  - variable: global.app.admin.email
+    default: "admin@marioviajes.com"
+    description: "Specify the Website Admin Email"
+    type: string
+    label: Website Admin Email
+    group: "Admin"
+  - variable: global.app.admin.password
+    default: "qwert12345QWERT!@#$%s"
+    description: "Specify the Website Admin Password"
+    type: string
+    label: Website Admin Password
+    group: "Admin"
+  - variable: global.app.admin.fname
+    default: "Lorem"
+    description: "Specify the Website Admin First Name"
+    type: string
+    label: Website Admin First Name
+    group: "Admin"
+  - variable: global.app.admin.lname
+    default: "Ipsum"
+    description: "Specify the Website Admin Last Name"
+    type: string
+    label: Website Admin Last Name
+    group: "Admin"
+  - variable: global.redis.host
+    default: "redis-master.default.svc.cluster.local"
+    description: "Specify the Redis host"
+    type: string
+    label: Redis host
+    group: "Redis"
+  - variable: global.redis.password
+    default: "1gzHwbgfwR"
+    description: "Specify the Redis password"
+    type: string
+    label: Redis password
+    group: "Redis"
+  - variable: global.redis.port
+    default: "6379"
+    description: "Specify the Redis port"
+    type: string
+    label: Redis port
+    group: "Redis"
+  - variable: global.proxy.ports.admin
+    default: "9696"
+    description: "Specify the admin port"
+    type: string
+    label: Admin port
+    group: "Proxy"
+  - variable: global.proxy.ports.public
+    default: "9797"
+    description: "Specify the public port"
+    type: string
+    label: Public port
+    group: "Proxy"
+  - variable: global.db.connections
+    default: "main,agency"
+    description: "Specify the database names separated by comma (,)"
+    type: string
+    label: Database connections
+    group: "Database"
+  - variable: global.db.host
+    default: "postgresql.default.svc.cluster.local"
+    description: "Specify the default Database Host"
+    type: string
+    label: Database host
+    group: "Database"
+  - variable: global.db.user
+    default: "cms"
+    description: "Specify the default Database Username"
+    type: string
+    label: Database username
+    group: "Database"
+  - variable: global.db.password
+    default: "0MG9DtWxT@t89*6"
+    description: "Specify the default Database Password"
+    type: string
+    label: Database password
+    group: "Database"
+  - variable: global.app.secrets.recaptcha_public_key
+    default: "6LdNqsESAAAAAPHt1ZG6vr4RBQHoM-eVcE4XB4wJ"
+    description: "Specify the RECAPTCHA public key"
+    type: string
+    label: Recaptcha Public Key
+    group: "Recaptcha"
+  - variable: global.app.secrets.recaptcha_public_key
+    default: "6LdNqsESAAAAANbWPLowt17zjEwNS4MuvVLfX7TQ"
+    description: "Specify the RECAPTCHA private key"
+    type: string
+    label: Recaptcha Private Key
+    group: "Recaptcha"
